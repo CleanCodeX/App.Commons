@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>0.1.2</Version>
+    <Version>0.1.3</Version>
     <Authors>App-Commons</Authors>
     <Company></Company>
     <PackageId>App-Commons</PackageId>

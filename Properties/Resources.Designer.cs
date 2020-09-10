@@ -61,7 +61,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert enthält nicht existierenden Verzeichnispfad: &quot;{0}&quot;. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be an existing directory: &quot;{0}&quot;. ähnelt.
         /// </summary>
         public static string ArgumentDirectoryNotExistsTemplate {
             get {
@@ -70,7 +70,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert muss den Wert &quot;{0}&quot; besitzen. Ist &quot;{1}&quot;. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be {0}. Was {1}. ähnelt.
         /// </summary>
         public static string ArgumentEqualCompareCurrentTemplate {
             get {
@@ -79,7 +79,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert enthält nicht nicht existierenden Dateipfad: &quot;{0}&quot;. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be an existing file: &quot;{0}&quot;. ähnelt.
         /// </summary>
         public static string ArgumentFileNotExistsTemplate {
             get {
@@ -88,7 +88,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Liste muss mindestens ein Element enthalten. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die List must contain at least one element. ähnelt.
         /// </summary>
         public static string ArgumentListNotEmptyMaxLength {
             get {
@@ -97,7 +97,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert übersteigt die maximale Länge von {0} Zeichen. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Text ist longer than {0} characters. ähnelt.
         /// </summary>
         public static string ArgumentMaxLengthTemplate {
             get {
@@ -106,7 +106,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert muss falsch sein. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be false. ähnelt.
         /// </summary>
         public static string ArgumentMustBeFalse {
             get {
@@ -115,7 +115,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert muss negativ sein. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be negative. ähnelt.
         /// </summary>
         public static string ArgumentMustBeNegative {
             get {
@@ -124,7 +124,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert muss null sein. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be null. ähnelt.
         /// </summary>
         public static string ArgumentMustBeNull {
             get {
@@ -133,7 +133,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert muss positiv sein. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be poitive. ähnelt.
         /// </summary>
         public static string ArgumentMustBePositive {
             get {
@@ -142,7 +142,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert muss wahr sein. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be true. ähnelt.
         /// </summary>
         public static string ArgumentMustBeTrue {
             get {
@@ -160,7 +160,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert darf nicht die Typ-Voreinstellung besitzen. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be the type&apos;s default. ähnelt.
         /// </summary>
         public static string ArgumentMustNotBeDefault {
             get {
@@ -169,7 +169,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert darf nicht null sein. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be null. ähnelt.
         /// </summary>
         public static string ArgumentMustNotBeNull {
             get {
@@ -178,7 +178,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert darf nicht den Wert &quot;{0}&quot; besitzen. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value cannot be &quot;{0}&quot;. ähnelt.
         /// </summary>
         public static string ArgumentNotEqualCurrentTemplate {
             get {
@@ -187,7 +187,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert darf nicht größer sein als {0}. (Ist {1}). ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be greater than {0}. Was {1}. ähnelt.
         /// </summary>
         public static string ArgumentNotGreaterThanMaxCurrentTemplate {
             get {
@@ -196,7 +196,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert darf nicht größer oder gleich sein zu &quot;{0}&quot;. Ist &quot;{1}&quot;. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be greater than or equal to {0}. Was {1}. ähnelt.
         /// </summary>
         public static string ArgumentNotGreaterThanOrEqualMaxCurrentTemplate {
             get {
@@ -205,7 +205,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert darf nicht kleiner sein als &quot;{0}&quot;. Ist &quot;{1}&quot;. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be less than {0}. Ist {1}. ähnelt.
         /// </summary>
         public static string ArgumentNotLessThanMaxCurrentTemplate {
             get {
@@ -214,7 +214,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Wert darf nicht kleiner oder gleich sein zu &quot;{0}&quot;. Ist &quot;{1}&quot;. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be less than or equal to {0}. Was {1}. ähnelt.
         /// </summary>
         public static string ArgumentNotLessThanOrEqualMaxCurrentTemplate {
             get {
@@ -223,7 +223,7 @@ namespace App.Commons.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Text darf nicht leer sein. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Text must not be empty. ähnelt.
         /// </summary>
         public static string ArgumentValueNotEmpty {
             get {

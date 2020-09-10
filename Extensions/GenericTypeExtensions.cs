@@ -27,16 +27,16 @@ namespace App.Commons.Extensions
         public static T GetOrThrowIfDefault<T>([NotNull, NotNullIfNotNull("source")] this T source, string argName, string? customErrorText = null) where T : struct
         {
             if (Equals(source, default(T)))
-                throw ExceptionsHelper.ArgumentDefault(argName, customErrorText);
+                throw ExceptionsHelper.ArgumentNotTypeDefault(argName, customErrorText);
 
             return source;
         }
 
         [return: NotNullIfNotNull("source")]
-        public static T? GetOrThrowIfNull<T>([NotNull, NotNullIfNotNull("source")] this T? source, string argName, string? customErrorText = null, StructTypeRequirement<T> _ = default) where T : struct => source ?? throw ExceptionsHelper.ArgumentNull(argName, customErrorText);
+        public static T? GetOrThrowIfNull<T>([NotNull, NotNullIfNotNull("source")] this T? source, string argName, string? customErrorText = null, StructTypeRequirement<T> _ = default) where T : struct => source ?? throw ExceptionsHelper.ArgumentNotNull(argName, customErrorText);
 
         [return: NotNullIfNotNull("source")]
-        public static T GetOrThrowIfNull<T>([NotNull, NotNullIfNotNull("source")] this T? source, string argName, string? customErrorText = null, ClassTypeRequirement<T> _ = default) where T : class => source ?? throw ExceptionsHelper.ArgumentNull(argName, customErrorText);
+        public static T GetOrThrowIfNull<T>([NotNull, NotNullIfNotNull("source")] this T? source, string argName, string? customErrorText = null, ClassTypeRequirement<T> _ = default) where T : class => source ?? throw ExceptionsHelper.ArgumentNotNull(argName, customErrorText);
 
         public static void ThrowIfNegative<T>(this T source, string argName, string? customErrorText = null) where T : struct, IConvertible, IComparable
             => Requires.NotNegative(source, argName, customErrorText);

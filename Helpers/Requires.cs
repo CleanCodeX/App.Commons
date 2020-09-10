@@ -83,11 +83,11 @@ namespace App.Commons.Helpers
 
         public static void Null(object? arg, string argName, string? customErrorText = null)
         {
-            if (arg != null)
+            if (arg is not null)
                 throw new ArgumentException(customErrorText ?? Strings.ArgumentMustBeNull, argName);
         }
 
-        public static void NotNull(object? arg, string argName, string? customErrorText = null)
+        public static void NotNull([NotNull] object? arg, string argName, string? customErrorText = null)
         {
             if (arg is null)
                 throw new ArgumentNullException(argName, customErrorText ?? Strings.ArgumentMustNotBeNull);

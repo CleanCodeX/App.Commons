@@ -1,18 +1,19 @@
 ﻿using System;
+
 // ReSharper disable InconsistentNaming
 
 namespace App.Commons.Helpers
 {
-    internal static class ExceptionsHelper
+    public static class ExceptionsHelper
     {
-        public static Exception ArgumentNull(string argName, string? customErrorText = null)
+        public static Exception ArgumentNotNull(string argName, string? customErrorText = null)
         {
             var newMessage = customErrorText ?? Requires.Strings.ArgumentMustNotBeNull;
 
             return new ArgumentNullException(argName, newMessage);
         }
 
-        public static Exception ArgumentDefault(string argName, string? customErrorText = null)
+        public static Exception ArgumentNotTypeDefault(string argName, string? customErrorText = null)
         {
             var newMessage = customErrorText ?? Requires.Strings.ArgumentMustNotBeDefault;
 
