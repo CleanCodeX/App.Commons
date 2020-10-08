@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Common.Shared.Minimum.Extensions
+namespace Common.Shared.Min.Extensions
 {
 	[DebuggerStepThrough]
 	public static class TypeExtensions

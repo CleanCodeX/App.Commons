@@ -2,7 +2,7 @@
 
 // ReSharper disable InconsistentNaming
 
-namespace Common.Shared.Minimum.Helpers
+namespace Common.Shared.Min.Helpers
 {
 	internal static class ExceptionsHelper
 	{

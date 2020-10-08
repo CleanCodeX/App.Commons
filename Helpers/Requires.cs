@@ -6,13 +6,13 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using Common.Shared.Minimum.Extensions;
-using Res = Common.Shared.Minimum.Properties.Resources;
+using Common.Shared.Min.Extensions;
+using Res = Common.Shared.Min.Properties.Resources;
 
 // ReSharper disable ParameterOnlyUsedForPreconditionCheck.Global
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace Common.Shared.Minimum.Helpers
+namespace Common.Shared.Min.Helpers
 {
 	/// <summary>
 	/// Helper class name for common checks

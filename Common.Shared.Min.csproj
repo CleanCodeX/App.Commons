@@ -7,8 +7,8 @@
     <Version>1.0.0-a1</Version>
     <Authors>CleanCodeX</Authors>
     <Company>CleanCodeX</Company>
-    <PackageId>CCX.Common.Shared.Minimum</PackageId>
-    <Product>Common.Shared.Minimum</Product>
+    <PackageId>CCX.Common.Shared.Min</PackageId>
+    <Product>Common.Shared.Min</Product>
     <Description>Collection of useful basic common extensions, helpers and error handling</Description>
     <Copyright></Copyright>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -16,7 +16,7 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
-    <RootNamespace>Common.Shared.Minimum</RootNamespace>
+    <RootNamespace>Common.Shared.Min</RootNamespace>
   </PropertyGroup>
 
 

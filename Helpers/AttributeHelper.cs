@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.Serialization;
 
-namespace Common.Shared.Minimum.Helpers
+namespace Common.Shared.Min.Helpers
 {
 	[DebuggerStepThrough]
 	internal static class AttributeHelper

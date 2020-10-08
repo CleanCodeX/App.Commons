@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.Serialization;
 
-namespace Common.Shared.Minimum.Extensions
+namespace Common.Shared.Min.Extensions
 {
 	public static class EnumExtensions
 	{

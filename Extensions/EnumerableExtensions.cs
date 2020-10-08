@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Linq;
 
-namespace Common.Shared.Minimum.Extensions
+namespace Common.Shared.Min.Extensions
 {
 	public static class EnumerableExtensions
 	{

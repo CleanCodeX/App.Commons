@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Text;
 
-namespace Common.Shared.Minimum.Extensions
+namespace Common.Shared.Min.Extensions
 {
 	public static class StringExtensions
 	{

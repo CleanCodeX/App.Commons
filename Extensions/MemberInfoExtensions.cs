@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
-namespace Common.Shared.Minimum.Extensions
+namespace Common.Shared.Min.Extensions
 {
 	[DebuggerStepThrough]
 	public static class MemberInfoExtensions

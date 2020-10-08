@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common.Shared.Minimum.Helpers
+namespace Common.Shared.Min.Helpers
 {
 	public static class ClassFactory
 	{

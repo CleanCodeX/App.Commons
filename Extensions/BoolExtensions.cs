@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Common.Shared.Minimum.Helpers;
+using Common.Shared.Min.Helpers;
 
-namespace Common.Shared.Minimum.Extensions
+namespace Common.Shared.Min.Extensions
 {
 	public static class BoolExtensions
 	{
