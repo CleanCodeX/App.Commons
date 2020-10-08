@@ -4,18 +4,19 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>0.1.3</Version>
-    <Authors>XETH</Authors>
-    <Company>XETH</Company>
-    <PackageId>App-Commons</PackageId>
-    <Product>App-Commons</Product>
-    <Description>Collection of useful common extensions, helpers and error handling</Description>
+    <Version>1.0.0-a1</Version>
+    <Authors>CleanCodeX</Authors>
+    <Company>CleanCodeX</Company>
+    <PackageId>CCX.Common.Shared.Minimum</PackageId>
+    <Product>Common.Shared.Minimum</Product>
+    <Description>Collection of useful basic common extensions, helpers and error handling</Description>
     <Copyright></Copyright>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/CleanCodeX</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/CleanCodeX/App.Commons</RepositoryUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <RootNamespace>Common.Shared.Minimum</RootNamespace>
   </PropertyGroup>
 
 
@@ -32,13 +33,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>

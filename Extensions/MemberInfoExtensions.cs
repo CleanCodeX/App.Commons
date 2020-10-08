@@ -5,88 +5,88 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
-namespace App.Commons.Extensions
+namespace Common.Shared.Minimum.Extensions
 {
-    [DebuggerStepThrough]
-    public static class MemberInfoExtensions
-    {
-        public static string? GetDisplayName([NotNull] this MemberInfo source, bool returnMemberNameIfNull = true)
-        {
-            var memberInfo = source;
-            while (memberInfo != null)
-            {
-                var displayName = memberInfo.TryGetAttribute<DisplayNameAttribute>(false)?.DisplayName ??
-                                  // ReSharper disable once RedundantArgumentDefaultValue
-                                  memberInfo.TryGetAttribute<DisplayAttribute>(true)?.Name ??
-                                  (returnMemberNameIfNull ? source.Name : null);
+	[DebuggerStepThrough]
+	public static class MemberInfoExtensions
+	{
+		public static string? GetDisplayName([NotNull] this MemberInfo source, bool returnMemberNameIfNull = true)
+		{
+			var memberInfo = source;
+			while (memberInfo != null)
+			{
+				var displayName = memberInfo.TryGetAttribute<DisplayNameAttribute>(false)?.DisplayName ??
+								  // ReSharper disable once RedundantArgumentDefaultValue
+								  memberInfo.TryGetAttribute<DisplayAttribute>(true)?.Name ??
+								  (returnMemberNameIfNull ? source.Name : null);
 
-                if (displayName != null)
-                    return displayName;
+				if (displayName != null)
+					return displayName;
 
-                break;
-            }
+				break;
+			}
 
-            return returnMemberNameIfNull ? source.Name : null;
-        }
+			return returnMemberNameIfNull ? source.Name : null;
+		}
 
-        public static TAttribute? TryGetAttribute<TAttribute>([NotNull] this MemberInfo source, bool inherit = true)
-            where TAttribute : Attribute
-        {
-            var memberInfo = source;
-            while (memberInfo != null)
-            {
-                var attribute = memberInfo.GetCustomAttribute<TAttribute>(inherit);
-                if (attribute != null)
-                    return attribute;
+		public static TAttribute? TryGetAttribute<TAttribute>([NotNull] this MemberInfo source, bool inherit = true)
+			where TAttribute : Attribute
+		{
+			var memberInfo = source;
+			while (memberInfo != null)
+			{
+				var attribute = memberInfo.GetCustomAttribute<TAttribute>(inherit);
+				if (attribute != null)
+					return attribute;
 
-                break;
-            }
+				break;
+			}
 
-            return null;
-        }
+			return null;
+		}
 
-        public static bool TryGetIsAttributeIsDefined<TAttribute>([NotNull] this MemberInfo source, bool inherit = true)
-            where TAttribute : Attribute
-        {
-            var memberInfo = source;
-            while (memberInfo != null)
-            {
-                var isDefined = memberInfo.IsDefined<TAttribute>(inherit);
-                if (isDefined)
-                    return true;
+		public static bool TryGetIsAttributeIsDefined<TAttribute>([NotNull] this MemberInfo source, bool inherit = true)
+			where TAttribute : Attribute
+		{
+			var memberInfo = source;
+			while (memberInfo != null)
+			{
+				var isDefined = memberInfo.IsDefined<TAttribute>(inherit);
+				if (isDefined)
+					return true;
 
-                break;
-            }
+				break;
+			}
 
-            return false;
-        }
+			return false;
+		}
 
-        public static bool IsDefined<T>([NotNull] this MemberInfo source, bool inherit = true) where T : Attribute => Attribute.IsDefined(source, typeof(T), inherit);
+		public static bool IsDefined<T>([NotNull] this MemberInfo source, bool inherit = true) where T : Attribute => Attribute.IsDefined(source, typeof(T), inherit);
 
-        public static int GetMaxLength([NotNull] this MemberInfo source) => source.TryGetAttribute<StringLengthAttribute>()?.MaximumLength ?? 0;
+		public static int GetMaxLength([NotNull] this MemberInfo source) => source.TryGetAttribute<StringLengthAttribute>()?.MaximumLength ?? 0;
 
-        public static bool GetIsRequired([NotNull] this MemberInfo source) => source.TryGetIsAttributeIsDefined<RequiredAttribute>();
+		public static bool GetIsRequired([NotNull] this MemberInfo source) => source.TryGetIsAttributeIsDefined<RequiredAttribute>();
 
-        public static T GetCustomAttributeOrNew<T>([NotNull] this MemberInfo source) where T : Attribute, new() => (T)source.GetCustomAttribute(typeof(T))! ?? new T();
+		public static T GetCustomAttributeOrNew<T>([NotNull] this MemberInfo source) where T : Attribute, new() => (T?)source.GetCustomAttribute(typeof(T)) ?? new T();
 
-        public static (T Min, T Max) GetRange<T>([NotNull] this MemberInfo source) where T : struct => ((T Min, T Max))source.GetRange();
+		public static (T Min, T Max) GetRange<T>([NotNull] this MemberInfo source) where T : struct => ((T Min, T Max))source.GetRange();
 
-        public static (object Min, object Max) GetRange([NotNull] this MemberInfo source)
-        {
-            var range = source.TryGetAttribute<RangeAttribute>();
-            return range is null
-                ? (0, 0)
-                : (range.Minimum, range.Maximum);
-        }
+		public static (object Min, object Max) GetRange([NotNull] this MemberInfo source)
+		{
+			var range = source.TryGetAttribute<RangeAttribute>();
+			return range is null
+				? (0, 0)
+				: (range.Minimum, range.Maximum);
+		}
 
-        public static Type? GetUnderlyingType(this MemberInfo member) =>
-            member.MemberType switch
-            {
-                MemberTypes.Event => ((EventInfo)member).EventHandlerType,
-                MemberTypes.Field => ((FieldInfo)member).FieldType,
-                MemberTypes.Method => ((MethodInfo)member).ReturnType,
-                MemberTypes.Property => ((PropertyInfo)member).PropertyType,
-                _ => throw new ArgumentException("Input MemberInfo must be if type EventInfo, FieldInfo, MethodInfo, or PropertyInfo")
-            };
-    }
+		public static Type? GetUnderlyingType(this MemberInfo member) =>
+			member.MemberType switch
+			{
+				MemberTypes.Event => ((EventInfo)member).EventHandlerType,
+				MemberTypes.Field => ((FieldInfo)member).FieldType,
+				MemberTypes.Method => ((MethodInfo)member).ReturnType,
+				MemberTypes.Property => ((PropertyInfo)member).PropertyType,
+				_ => throw new ArgumentException("Input MemberInfo must be if type EventInfo, FieldInfo, MethodInfo, or PropertyInfo")
+			};
+	}
 }
