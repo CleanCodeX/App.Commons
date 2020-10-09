@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>1.0.0-a1</Version>
+    <Version>1.0.0-a2</Version>
     <Authors>CleanCodeX</Authors>
     <Company>CleanCodeX</Company>
     <PackageId>CCX.Common.Shared.Min</PackageId>
@@ -13,7 +13,7 @@
     <Copyright></Copyright>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
     <RootNamespace>Common.Shared.Min</RootNamespace>
