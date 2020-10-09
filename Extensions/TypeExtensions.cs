@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
@@ -8,7 +7,6 @@ using System.Reflection;
 
 namespace Common.Shared.Min.Extensions
 {
-	[DebuggerStepThrough]
 	public static class TypeExtensions
 	{
 		public static IEnumerable<PropertyInfo> GetProperties([NotNull] this Type source, params string[] propertyNames) => propertyNames.Select(source.GetProperty)!;
@@ -22,7 +20,7 @@ namespace Common.Shared.Min.Extensions
 
 			return type.GetInterfaces()
 				.Select(@interface => @interface.GetProperty(propertyName, bindingFlags))
-				.FirstOrDefault(propInfo => propInfo != null);
+				.FirstOrDefault(propInfo => propInfo is not null);
 		}
 
 		public static TAttribute? FindAttribute<TAttribute>(this Type type, bool inherit = true)
@@ -32,13 +30,13 @@ namespace Common.Shared.Min.Extensions
 		public static Attribute? FindAttribute(this Type type, Type attributeType, bool inherit = true)
 		{
 			var attribute = type.GetCustomAttribute(attributeType, inherit);
-			if (attribute != null) return attribute;
+			if (attribute is not null) return attribute;
 			if (!inherit) return null;
 
 			foreach (var @interface in type.GetInterfaces())
 			{
 				attribute = @interface.GetCustomAttribute(attributeType, true);
-				if (attribute != null) return attribute;
+				if (attribute is not null) return attribute;
 			}
 
 			return null;
@@ -49,7 +47,7 @@ namespace Common.Shared.Min.Extensions
 		public static bool IsNullableEnum(this Type t)
 		{
 			var u = Nullable.GetUnderlyingType(t);
-			return u != null && u.IsEnum;
+			return u is not null && u.IsEnum;
 		}
 
 		[SuppressMessage("Stil", "IDE0060:Nicht verwendete Parameter entfernen")]

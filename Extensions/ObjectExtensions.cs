@@ -22,8 +22,7 @@ namespace Common.Shared.Min.Extensions
 		[return: NotNull]
 		public static Enum ToEnum([NotNull] this object @enum, Type enumType)
 		{
-			_ = @enum ?? throw new ArgumentNullException(nameof(@enum));
-
+			@enum.ThrowIfNull(nameof(@enum));
 			var type = @enum!.GetType();
 			type.IsEnum.ThrowIfFalse(nameof(type.IsEnum));
 

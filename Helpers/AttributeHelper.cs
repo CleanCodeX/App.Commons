@@ -1,13 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.Serialization;
 
 namespace Common.Shared.Min.Helpers
 {
-	[DebuggerStepThrough]
 	internal static class AttributeHelper
 	{
 		public static int GetMaxLength<T>(Expression<Func<T, string?>> propertyExpression) => GetPropertyAttributeValue<T, string?, StringLengthAttribute, int>(propertyExpression, attr => attr.MaximumLength);

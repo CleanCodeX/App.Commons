@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Linq.Expressions;
 using Common.Shared.Min.Helpers;
 
 namespace Common.Shared.Min.Extensions
 {
 	[SuppressMessage("Stil", "IDE0060:Nicht verwendete Parameter entfernen", Justification = "<Ausstehend>")]
-	[DebuggerStepThrough]
 	public static class GenericTypeExtensions
 	{
 		#region Throw
@@ -54,19 +51,8 @@ namespace Common.Shared.Min.Extensions
 
 		#region Casting, Conversion
 
-		[return: NotNull]
-		public static T[] AsArray<T>(this T obj, params T[] args) where T : notnull => args.Append(obj).ToArray();
-
-		[return: NotNull]
-		public static List<T> AsList<T>(this T obj, params T[] args) where T : notnull
-		{
-			var list = new List<T> {obj};
-			
-			if (args.Length > 0)
-				list.AddRange(args);
-
-			return list;
-		}
+		public static T[] AsArray<T>(this T source) where T : notnull => new[] { source };
+		public static List<T> AsList<T>(this T source) where T : notnull => new List<T> { source };
 
 		#endregion
 

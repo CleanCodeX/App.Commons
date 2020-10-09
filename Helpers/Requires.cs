@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
@@ -17,7 +16,6 @@ namespace Common.Shared.Min.Helpers
 	/// <summary>
 	/// Helper class name for common checks
 	/// </summary>
-	[DebuggerStepThrough]
 	public static class Requires
 	{
 		public static void Implements<TInterface>([NotNull] object instance, string? customErrorText = null)

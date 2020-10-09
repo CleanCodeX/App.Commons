@@ -1,71 +1,35 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
 namespace Common.Shared.Min.Extensions
 {
-	[DebuggerStepThrough]
 	public static class MemberInfoExtensions
 	{
 		public static string? GetDisplayName([NotNull] this MemberInfo source, bool returnMemberNameIfNull = true)
 		{
-			var memberInfo = source;
-			while (memberInfo != null)
-			{
-				var displayName = memberInfo.TryGetAttribute<DisplayNameAttribute>(false)?.DisplayName ??
-								  // ReSharper disable once RedundantArgumentDefaultValue
-								  memberInfo.TryGetAttribute<DisplayAttribute>(true)?.Name ??
-								  (returnMemberNameIfNull ? source.Name : null);
+			var displayName = source.TryGetAttribute<DisplayNameAttribute>(false)?.DisplayName ??
+			                  // ReSharper disable once RedundantArgumentDefaultValue
+			                  source.TryGetAttribute<DisplayAttribute>(true)?.Name ??
+			                  (returnMemberNameIfNull ? source.Name : null);
 
-				if (displayName != null)
-					return displayName;
-
-				break;
-			}
+			if (displayName is not null)
+				return displayName;
 
 			return returnMemberNameIfNull ? source.Name : null;
 		}
 
 		public static TAttribute? TryGetAttribute<TAttribute>([NotNull] this MemberInfo source, bool inherit = true)
-			where TAttribute : Attribute
-		{
-			var memberInfo = source;
-			while (memberInfo != null)
-			{
-				var attribute = memberInfo.GetCustomAttribute<TAttribute>(inherit);
-				if (attribute != null)
-					return attribute;
-
-				break;
-			}
-
-			return null;
-		}
-
-		public static bool TryGetIsAttributeIsDefined<TAttribute>([NotNull] this MemberInfo source, bool inherit = true)
-			where TAttribute : Attribute
-		{
-			var memberInfo = source;
-			while (memberInfo != null)
-			{
-				var isDefined = memberInfo.IsDefined<TAttribute>(inherit);
-				if (isDefined)
-					return true;
-
-				break;
-			}
-
-			return false;
-		}
+			where TAttribute : Attribute =>
+			source.GetCustomAttribute<TAttribute>(inherit);
 
 		public static bool IsDefined<T>([NotNull] this MemberInfo source, bool inherit = true) where T : Attribute => Attribute.IsDefined(source, typeof(T), inherit);
 
 		public static int GetMaxLength([NotNull] this MemberInfo source) => source.TryGetAttribute<StringLengthAttribute>()?.MaximumLength ?? 0;
 
-		public static bool GetIsRequired([NotNull] this MemberInfo source) => source.TryGetIsAttributeIsDefined<RequiredAttribute>();
+		public static bool HasIsRequired([NotNull] this MemberInfo source) => source.IsDefined<RequiredAttribute>();
 
 		public static T GetCustomAttributeOrNew<T>([NotNull] this MemberInfo source) where T : Attribute, new() => (T?)source.GetCustomAttribute(typeof(T)) ?? new T();
 
