@@ -6,9 +6,9 @@ using Common.Shared.Min.Extensions;
 namespace Common.Shared.Min.Attributes
 {
 	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Event | AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Field | AttributeTargets.Enum)]
-	public class DisplayNameAttributeLocalized : DisplayNameAttribute
+	public class DisplayNameLocalizedAttribute : DisplayNameAttribute
 	{
-		public DisplayNameAttributeLocalized(string displayNameKey, Type resourceType)
+		public DisplayNameLocalizedAttribute(string displayNameKey, Type resourceType)
 			: base(displayNameKey)
 		{
 			resourceType.ThrowIfNull(nameof(resourceType));

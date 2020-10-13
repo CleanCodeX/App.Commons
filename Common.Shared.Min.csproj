@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-    <Version>1.1.2</Version>
+    <Version>1.1.3-a1</Version>
     <Authors>CleanCodeX</Authors>
     <Company>CleanCodeX</Company>
     <PackageId>CCX.Common.Shared.Min</PackageId>
