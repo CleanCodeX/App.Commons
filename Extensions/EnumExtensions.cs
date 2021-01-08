@@ -109,7 +109,7 @@ namespace Common.Shared.Min.Extensions
 		/// <returns>An enumerator that allows foreach to be used to process get flags in this collection.</returns>
 		// ReSharper disable once UnusedParameter.Global
 		[SuppressMessage("Stil", "IDE0060:Nicht verwendete Parameter entfernen")]
-		public static IEnumerable<TEnum> GetValues<TEnum>(this TEnum source) where TEnum : struct, Enum => Enum.GetValues(typeof(TEnum)).Cast<TEnum>();
+		public static IEnumerable<TEnum> GetValues<TEnum>(this TEnum source) where TEnum : struct, Enum => Enum.GetValues<TEnum>();
 
 		/// <summary>
 		/// Gets an attribute on an enum field value
