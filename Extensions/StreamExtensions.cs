@@ -11,6 +11,8 @@ namespace Common.Shared.Min.Extensions
             var buffer = new byte[stream.Length];
             var ms = new MemoryStream(buffer);
 
+            stream.Position = 0;
+
             await stream.CopyToAsync(ms).KeepContext();
 
             ms.Position = 0;

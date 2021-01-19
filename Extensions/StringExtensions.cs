@@ -90,7 +90,6 @@ namespace Common.Shared.Min.Extensions
 			return string.Format(str, args);
 		}
 
-
         public static string ReplaceUntil(this string source, string separator, string find, string replace)
         {
             var strBefore = source.SubstringBefore(separator, true);
