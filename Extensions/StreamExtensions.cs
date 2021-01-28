@@ -6,14 +6,15 @@ namespace Common.Shared.Min.Extensions
 {
     public static class StreamExtensions
     {
-        public static async Task<MemoryStream> CopyAsMemoryStreamAsync([NotNull] this Stream stream)
+        public static async Task<MemoryStream> CopyAsMemoryStreamAsync([NotNull] this Stream source, bool resetPosition = false)
         {
-            var buffer = new byte[stream.Length];
+            var buffer = new byte[source.Length];
             var ms = new MemoryStream(buffer);
 
-            stream.Position = 0;
+            if(resetPosition && source.CanSeek)
+                source.Position = 0;
 
-            await stream.CopyToAsync(ms).KeepContext();
+            await source.CopyToAsync(ms).KeepContext();
 
             ms.Position = 0;
 

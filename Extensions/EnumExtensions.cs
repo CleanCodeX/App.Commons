@@ -19,6 +19,9 @@ namespace Common.Shared.Min.Extensions
 		public static uint ToUInt(this Enum source) => (uint)(object)source;
 		public static int ToInt(this Enum source) => (int)(object)source;
 
+		public static ulong ToULong(this Enum source) => (ulong)(object)source;
+		public static long ToLong(this Enum source) => (long)(object)source;
+
 		public static long GetOffset(this Enum value)
 		{
 			var enumValues = Enum.GetValues(value.GetType());
