@@ -8,7 +8,9 @@ namespace Common.Shared.Min.Extensions
 {
 	public static class StringExtensions
 	{
-		public static string Repeat(this string input, int count)
+		public static string? ToNullIfEmpty(this string? source) => source == string.Empty ? null : source;
+
+        public static string Repeat(this string input, int count)
 		{
 			if (string.IsNullOrEmpty(input)) return string.Empty;
 

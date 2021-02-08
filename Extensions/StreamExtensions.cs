@@ -20,5 +20,15 @@ namespace Common.Shared.Min.Extensions
 
             return ms;
         }
+
+
+        /// <summary>
+        /// Saves the whole content of the stream to a target stream by setting the source position top 0
+        /// </summary>
+        public static void CopyAllTo([NotNull] this Stream source, [NotNull] Stream target)
+        {
+            source.Position = 0;
+            source.CopyTo(target);
+        }
     }
 }

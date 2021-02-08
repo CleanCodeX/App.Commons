@@ -5,11 +5,10 @@ using Common.Shared.Min.Extensions;
 
 namespace Common.Shared.Min.Attributes
 {
-	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Event | AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Field | AttributeTargets.Enum)]
+	[AttributeUsage(AttributeTargets.All)]
 	public class DisplayNameLocalizedAttribute : DisplayNameAttribute
 	{
-		public DisplayNameLocalizedAttribute(string displayNameKey, Type resourceType)
-			: base(displayNameKey)
+		public DisplayNameLocalizedAttribute(string displayNameKey, Type resourceType) : base(displayNameKey)
 		{
 			resourceType.ThrowIfNull(nameof(resourceType));
 
