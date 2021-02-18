@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 
 namespace Common.Shared.Min.Extensions
 {
@@ -11,12 +9,9 @@ namespace Common.Shared.Min.Extensions
 		public static Enum ToEnum<TEnum>([NotNull] this object enumeration) 
 			where TEnum : struct, Enum => enumeration.ToEnum(typeof(TEnum));
 
-		public static IDictionary<string, Enum> ToDictionary<TEnum>(this TEnum source) where TEnum : struct, Enum => Enum.GetNames<TEnum>().ToDictionary(k => k, v => (Enum)v.ParseEnum<TEnum>());
-
-		public static object? ParseEnum(this object? value, Type enumType,
-			bool ignoreCase = true)
+		public static object? ParseEnum(this object? value, Type enumType, bool ignoreCase = true)
 		{
-			if (!(value is string str)) return null;
+			if (value is not string str) return null;
 
 			Enum.TryParse(enumType, str, ignoreCase, out var result);
 

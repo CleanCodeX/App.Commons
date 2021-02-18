@@ -10,6 +10,11 @@ namespace Common.Shared.Min.Extensions
 {
 	public static class EnumExtensions
 	{
+		public static IDictionary<string, Enum> ToDictionary<TEnum>(this TEnum source) where TEnum : struct, Enum => Enum.GetNames<TEnum>().ToDictionary(k => k, v => (Enum)v.ParseEnum<TEnum>());
+
+		public static IDictionary<string, Enum> ToDictionary([NotNull] this Enum source) =>
+			Enum.GetNames(source.GetType()).ToDictionary(k => k, v => v.ParseEnum(source.GetType())!);
+
 		public static byte ToByte(this Enum source) => (byte)(object)source;
 		public static sbyte ToSbyte(this Enum source) => (sbyte)(object)source;
 
