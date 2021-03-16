@@ -70,11 +70,11 @@ namespace Common.Shared.Min.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be {0}. Was {1}. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must be {0}, but was {1}. ähnelt.
         /// </summary>
-        public static string ArgumentEqualCompareCurrentTemplate {
+        public static string ArgumentEqualCompareActualTemplate {
             get {
-                return ResourceManager.GetString("ArgumentEqualCompareCurrentTemplate", resourceCulture);
+                return ResourceManager.GetString("ArgumentEqualCompareActualTemplate", resourceCulture);
             }
         }
         
@@ -180,45 +180,45 @@ namespace Common.Shared.Min.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Value cannot be &quot;{0}&quot;. ähnelt.
         /// </summary>
-        public static string ArgumentNotEqualCurrentTemplate {
+        public static string ArgumentNotEqualActualTemplate {
             get {
-                return ResourceManager.GetString("ArgumentNotEqualCurrentTemplate", resourceCulture);
+                return ResourceManager.GetString("ArgumentNotEqualActualTemplate", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be greater than {0}. Was {1}. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be greater than {0}, but was {1}. ähnelt.
         /// </summary>
-        public static string ArgumentNotGreaterThanMaxCurrentTemplate {
+        public static string ArgumentNotGreaterThanMaxActualTemplate {
             get {
-                return ResourceManager.GetString("ArgumentNotGreaterThanMaxCurrentTemplate", resourceCulture);
+                return ResourceManager.GetString("ArgumentNotGreaterThanMaxActualTemplate", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be greater than or equal to {0}. Was {1}. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be greater than or equal to {0}, but was {1}. ähnelt.
         /// </summary>
-        public static string ArgumentNotGreaterThanOrEqualMaxCurrentTemplate {
+        public static string ArgumentNotGreaterThanOrEqualMaxActualTemplate {
             get {
-                return ResourceManager.GetString("ArgumentNotGreaterThanOrEqualMaxCurrentTemplate", resourceCulture);
+                return ResourceManager.GetString("ArgumentNotGreaterThanOrEqualMaxActualTemplate", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be less than {0}. Ist {1}. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be less than {0}, but was {1}. ähnelt.
         /// </summary>
-        public static string ArgumentNotLessThanMaxCurrentTemplate {
+        public static string ArgumentNotLessThanMaxActualTemplate {
             get {
-                return ResourceManager.GetString("ArgumentNotLessThanMaxCurrentTemplate", resourceCulture);
+                return ResourceManager.GetString("ArgumentNotLessThanMaxActualTemplate", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be less than or equal to {0}. Was {1}. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value must not be less than or equal to {0}, but was {1}. ähnelt.
         /// </summary>
-        public static string ArgumentNotLessThanOrEqualMaxCurrentTemplate {
+        public static string ArgumentNotLessThanOrEqualMaxActualTemplate {
             get {
-                return ResourceManager.GetString("ArgumentNotLessThanOrEqualMaxCurrentTemplate", resourceCulture);
+                return ResourceManager.GetString("ArgumentNotLessThanOrEqualMaxActualTemplate", resourceCulture);
             }
         }
         

@@ -117,23 +117,23 @@
   <resheader name="writer">
 	<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ArgumentNotEqualCurrentTemplate" xml:space="preserve">
+  <data name="ArgumentNotEqualActualTemplate" xml:space="preserve">
 	<value>Value cannot be "{0}".</value>
   </data>
-  <data name="ArgumentEqualCompareCurrentTemplate" xml:space="preserve">
-	<value>Value must be {0}. Was {1}.</value>
+  <data name="ArgumentEqualCompareActualTemplate" xml:space="preserve">
+	<value>Value must be {0}, but was {1}.</value>
   </data>
-  <data name="ArgumentNotLessThanMaxCurrentTemplate" xml:space="preserve">
-	<value>Value must not be less than {0}. Ist {1}.</value>
+  <data name="ArgumentNotLessThanMaxActualTemplate" xml:space="preserve">
+	<value>Value must not be less than {0}, but was {1}.</value>
   </data>
-  <data name="ArgumentNotGreaterThanMaxCurrentTemplate" xml:space="preserve">
-	<value>Value must not be greater than {0}. Was {1}.</value>
+  <data name="ArgumentNotGreaterThanMaxActualTemplate" xml:space="preserve">
+	<value>Value must not be greater than {0}, but was {1}.</value>
   </data>
-  <data name="ArgumentNotLessThanOrEqualMaxCurrentTemplate" xml:space="preserve">
-	<value>Value must not be less than or equal to {0}. Was {1}.</value>
+  <data name="ArgumentNotLessThanOrEqualMaxActualTemplate" xml:space="preserve">
+	<value>Value must not be less than or equal to {0}, but was {1}.</value>
   </data>
-  <data name="ArgumentNotGreaterThanOrEqualMaxCurrentTemplate" xml:space="preserve">
-	<value>Value must not be greater than or equal to {0}. Was {1}.</value>
+  <data name="ArgumentNotGreaterThanOrEqualMaxActualTemplate" xml:space="preserve">
+	<value>Value must not be greater than or equal to {0}, but was {1}.</value>
   </data>
   <data name="ArgumentMustBeNull" xml:space="preserve">
 	<value>Value must be null.</value>

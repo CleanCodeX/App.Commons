@@ -46,7 +46,7 @@ namespace Common.Shared.Min.Helpers
 			where T : struct, IComparable
 		{
 			if (actual.CompareTo(expected) < 0)
-				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotLessThanMaxCurrentTemplate.InsertArgs(actual, expected), argName);
+				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotLessThanMaxActualTemplate.InsertArgs(expected, actual), argName);
 		}
 
 		public static void NotLessThanOrEqual<T>(T actual, T expected, string argName, string? customErrorText = null)
@@ -56,7 +56,7 @@ namespace Common.Shared.Min.Helpers
 			where T : struct, IComparable
 		{
 			if (actual.CompareTo(expected) <= 0)
-				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotLessThanOrEqualMaxCurrentTemplate.InsertArgs(actual, expected), argName);
+				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotLessThanOrEqualMaxActualTemplate.InsertArgs(expected, actual), argName);
 		}
 
 		public static void NotGreaterThan<T>(T actual, T expected, string argName, string? customErrorText = null,
@@ -66,7 +66,7 @@ namespace Common.Shared.Min.Helpers
 			where T : struct, IComparable
 		{
 			if (actual.CompareTo(expected) > 0)
-				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotGreaterThanMaxCurrentTemplate.InsertArgs(actual, expected), argName);
+				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotGreaterThanMaxActualTemplate.InsertArgs(expected, actual), argName);
 		}
 
 		public static void NotGreaterThanOrEqual<T>(T actual, T expected, string argName, string? customErrorText = null)
@@ -76,7 +76,7 @@ namespace Common.Shared.Min.Helpers
 			where T : struct, IComparable
 		{
 			if (actual.CompareTo(expected) >= 0)
-				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotGreaterThanOrEqualMaxCurrentTemplate.InsertArgs(actual, expected), argName);
+				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotGreaterThanOrEqualMaxActualTemplate.InsertArgs(expected, actual), argName);
 		}
 
 		public static void Null(object? arg, string argName, string? customErrorText = null)
@@ -140,14 +140,14 @@ namespace Common.Shared.Min.Helpers
 
 		public static void Equal<T>(T actual, T expected, string argName, string? customErrorText = null)
 		{
-			if (!Equals(actual, expected))
-				throw new ArgumentException(customErrorText ?? Strings.ArgumentEqualCompareCurrentTemplate.InsertArgs(actual), argName);
+			if (!Equals(expected, actual))
+				throw new ArgumentException(customErrorText ?? Strings.ArgumentEqualCompareActualTemplate.InsertArgs(expected, actual), argName);
 		}
 
 		public static void NotEqual<T>(T actual, T expected, string argName, string? customErrorText = null)
 		{
-			if (Equals(actual, expected))
-				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotEqualCurrentTemplate.InsertArgs(actual), argName);
+			if (Equals(expected, actual))
+				throw new ArgumentException(customErrorText ?? Strings.ArgumentNotEqualActualTemplate.InsertArgs(expected, actual), argName);
 		}
 
 		public static void DirectoryExists(string? path, string argName, string? customErrorText = null)
@@ -174,14 +174,14 @@ namespace Common.Shared.Min.Helpers
 
 		internal static class Strings
 		{
-			internal static readonly string ArgumentNotEqualCurrentTemplate = Res.ArgumentNotEqualCurrentTemplate;
-			internal static readonly string ArgumentEqualCompareCurrentTemplate = Res.ArgumentEqualCompareCurrentTemplate;
+			internal static readonly string ArgumentNotEqualActualTemplate = Res.ArgumentNotEqualActualTemplate;
+			internal static readonly string ArgumentEqualCompareActualTemplate = Res.ArgumentEqualCompareActualTemplate;
 
-			internal static readonly string ArgumentNotLessThanMaxCurrentTemplate = Res.ArgumentNotLessThanMaxCurrentTemplate;
-			internal static readonly string ArgumentNotGreaterThanMaxCurrentTemplate = Res.ArgumentNotGreaterThanMaxCurrentTemplate;
+			internal static readonly string ArgumentNotLessThanMaxActualTemplate = Res.ArgumentNotLessThanMaxActualTemplate;
+			internal static readonly string ArgumentNotGreaterThanMaxActualTemplate = Res.ArgumentNotGreaterThanMaxActualTemplate;
 
-			internal static readonly string ArgumentNotLessThanOrEqualMaxCurrentTemplate = Res.ArgumentNotLessThanOrEqualMaxCurrentTemplate;
-			internal static readonly string ArgumentNotGreaterThanOrEqualMaxCurrentTemplate = Res.ArgumentNotGreaterThanOrEqualMaxCurrentTemplate;
+			internal static readonly string ArgumentNotLessThanOrEqualMaxActualTemplate = Res.ArgumentNotLessThanOrEqualMaxActualTemplate;
+			internal static readonly string ArgumentNotGreaterThanOrEqualMaxActualTemplate = Res.ArgumentNotGreaterThanOrEqualMaxActualTemplate;
 
 			internal static readonly string ArgumentMustBeNull = Res.ArgumentMustBeNull;
 			internal static readonly string ArgumentMustBeTrue = Res.ArgumentMustBeTrue;
